@@ -1,0 +1,187 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+  --ff-primary: 'Roboto', sans-serif;
+  --ff-secondary: 'Poppins', sans-serif;
+
+  --fc-default: #000000;
+  --fc-pink: #FF5678;
+  --fc-light-blue: #35E6E9;
+  --fc-white: #FFFFFF;
+
+  --bg-pink: #FF5678;
+  --bg-light-blue: #35E6E9;
+  --border-color-default: .1rem solid rgba(0,0,0, 0.15);
+  --bd-radius-default: 1.2rem;
+}
+
+body {
+  font-family: var(--ff-primary);
+  font-size: 1.4rem;
+}
+
+.content {
+  display: grid;
+  grid-template-areas: 
+    ". . . . . . ."
+    ". . . . . . ."
+    ". . hero . form . ."
+    ". . hero . form . ."
+    ". . . . . . ."
+  ;
+
+  gap: 8.5rem;
+}
+
+aside {
+  grid-area: hero;
+}
+
+main {
+  grid-area: form;
+}
+
+aside h1 {
+  font-family: Roboto;
+  font-size: 6.4rem;
+  font-weight: 500;
+}
+
+aside h1 span,
+main h2 span {
+  color: var(--fc-pink);
+}
+
+main {
+  width: 60rem;
+  height: 52rem;
+  border: var(--border-color-default);
+  border-radius: var(--bd-radius-default);
+  padding: 4.4rem 5.7rem;
+  position: relative;
+}
+
+main h2 {
+  max-width: 43rem;
+  font-size: 3.6rem;
+  font-weight: 500;
+  line-height: 4.2rem;
+}
+
+main .ancors_buttons {
+  display: flex;
+  flex-flow: column wrap;
+}
+
+main .ancors_buttons a{
+  height: 5.5rem;
+  border-radius: var(--bd-radius-default);
+  margin-top: 5.4rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 2.4rem;
+  text-decoration: none;
+  color: var(--fc-white);
+  background-color: var(--bg-light-blue);
+}
+
+main .ancors_buttons a+a {
+  margin-top: 4.8rem;
+  background-color: var(--bg-pink);
+}
+
+main header {
+  display: flex;
+  align-items: center;
+  gap: 0 1.8rem;
+}
+
+main header i {
+  font-size: 2.4rem;
+  color: var(--fc-pink);
+}
+
+main footer p {
+  margin-top: 8rem;
+  font-size: 1.6rem;
+}
+
+main footer a {
+  margin-top: 1rem;
+  font-size: 1.8rem;
+  display: block;
+  text-align: center;
+}
+
+main footer a span {
+  color: var(--fc-default);
+}
+
+main form {
+  margin-top: 1.6rem;
+}
+
+main form label {
+  font-size: 1.8rem;
+  font-weight: 400;
+  text-transform: lowercase;
+
+  margin-bottom: 1rem;
+  display: block;
+}
+
+main form :is(input, select) {
+  width: 49rem;
+  height: 5.5rem;
+
+  background-color: var(--fc-white);
+  border: var(--border-color-default);
+  border-radius: var(--bd-radius-default);
+}
+
+main form select {
+  appearance: none;
+}
+
+main form .select-div {
+  position: relative;
+}
+
+main form .select-div::after {
+  top: 2rem;
+  right: .5rem;
+  
+  font-size: 1.6rem;
+  content: '\f107';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 600;
+
+  color: var(--bg-light-blue);
+  position: absolute;
+  z-index: 1;
+
+}
+
+main form .points {
+  position: relative;
+}
+
+main form input + button {
+  position: absolute;
+  right: -4.5rem;
+  top: calc(2.7rem + 2rem);
+
+  background-color: transparent;
+  border: none;
+  color: var(--bg-light-blue);
+  font-size: 2.4rem;
+  cursor: pointer;
+}
